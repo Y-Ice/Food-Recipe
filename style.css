@@ -129,7 +129,7 @@ button {
 }
 
 .logo-icon {
-    font-size: 1.2rem;
+    width: 5rem;
 }
 
 .nav-right {
@@ -1008,7 +1008,6 @@ button {
     transform: translateY(-2px);
 }
 
-   /* RESPONSIVE */
 
 @media (max-width: 900px) {
     .detail-hero {
