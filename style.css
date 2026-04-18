@@ -1008,8 +1008,7 @@ button {
     transform: translateY(-2px);
 }
 
-   RESPONSIVE
-   ══════════════════════════════════ */
+   /* RESPONSIVE */
 
 @media (max-width: 900px) {
     .detail-hero {
