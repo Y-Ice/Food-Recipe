@@ -46,7 +46,6 @@
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, .5);
 }
 
-/* ── RESET & BASE ──────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -96,7 +95,6 @@ button {
     padding: 0 24px;
 }
 
-/* ── NAVBAR ────────────────────────────────────── */
 .navbar {
     position: fixed;
     top: 0;
@@ -195,7 +193,6 @@ button {
     transform: rotate(20deg);
 }
 
-/* ── HERO ──────────────────────────────────────── */
 .hero {
     position: relative;
     min-height: 88vh;
@@ -274,7 +271,6 @@ button {
     font-weight: 300;
 }
 
-/* ── SEARCH ─────────────────────────────────────── */
 .search-wrap {
     display: flex;
     align-items: center;
@@ -324,7 +320,6 @@ button {
     transform: scale(1.05);
 }
 
-/* ── SECTION HEADER ─────────────────────────────── */
 .section-header {
     margin-bottom: 2rem;
 }
@@ -345,7 +340,6 @@ button {
     margin-top: 10px;
 }
 
-/* ── CATEGORIES ─────────────────────────────────── */
 .categories-section {
     padding: 0 0 20px;
 }
@@ -381,19 +375,16 @@ button {
     box-shadow: 0 4px 14px rgba(197, 84, 26, .35);
 }
 
-/* ── RECIPES SECTION ─────────────────────────────── */
 .recipes-section {
     padding: 40px 0 100px;
 }
 
-/* ── RECIPE GRID ─────────────────────────────────── */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 28px;
 }
 
-/* ── RECIPE CARD ─────────────────────────────────── */
 .recipe-card {
     background: var(--clr-surface);
     border-radius: var(--radius-lg);
@@ -557,7 +548,6 @@ button {
     color: #fff;
 }
 
-/* ── SKELETON LOADER ──────────────────────────────── */
 .skeleton-card {
     background: var(--clr-surface);
     border-radius: var(--radius-lg);
@@ -608,7 +598,6 @@ button {
     margin-bottom: 0;
 }
 
-/* ── NO RESULTS ──────────────────────────────────── */
 .no-results {
     text-align: center;
     padding: 80px 20px;
@@ -630,7 +619,6 @@ button {
     margin-bottom: 1.5rem;
 }
 
-/* ── BUTTONS ─────────────────────────────────────── */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -675,7 +663,6 @@ button {
     margin-top: 48px;
 }
 
-/* ── BACK BUTTON ──────────────────────────────────── */
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -693,7 +680,6 @@ button {
     gap: 12px;
 }
 
-/* ── DETAIL VIEW ──────────────────────────────────── */
 .detail-container {
     padding-top: calc(var(--navbar-h) + 20px);
     padding-bottom: 100px;
@@ -822,7 +808,6 @@ button {
     font-weight: 600;
 }
 
-/* INGREDIENTS */
 .ingredients-block {
     background: var(--clr-surface-alt);
     border-radius: var(--radius-md);
@@ -887,7 +872,6 @@ button {
     flex-shrink: 0;
 }
 
-/* INSTRUCTIONS */
 .instructions-block {}
 
 .instructions-text {
@@ -942,7 +926,6 @@ button {
     padding-top: 6px;
 }
 
-/* ── TOAST ───────────────────────────────────────── */
 .toast {
     position: fixed;
     bottom: 32px;
@@ -964,7 +947,6 @@ button {
     transform: translateX(-50%) translateY(0);
 }
 
-/* ── LOADER ──────────────────────────────────────── */
 .loader-overlay {
     position: fixed;
     inset: 0;
@@ -995,7 +977,6 @@ button {
     }
 }
 
-/* ── FOOTER ──────────────────────────────────────── */
 .footer {
     background: var(--clr-surface-alt);
     border-top: 1px solid var(--clr-border);
@@ -1009,7 +990,6 @@ button {
     color: var(--clr-accent);
 }
 
-/* ── YOUTUBE LINK ────────────────────────────────── */
 .yt-link {
     display: inline-flex;
     align-items: center;
@@ -1028,11 +1008,9 @@ button {
     transform: translateY(-2px);
 }
 
-/* ══════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════ */
 
-/* TABLET */
 @media (max-width: 900px) {
     .detail-hero {
         grid-template-columns: 1fr;
@@ -1049,7 +1027,6 @@ button {
     }
 }
 
-/* MOBILE */
 @media (max-width: 600px) {
     .navbar {
         padding: 0 20px;

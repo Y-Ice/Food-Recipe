@@ -2,18 +2,15 @@
 
 'use strict';
 
-// ── CONSTANTS ──────────────────────────────────────────────
 const API = 'https://www.themealdb.com/api/json/v1/1';
 const PAGE_SIZE = 12;
 
-// ── STATE ──────────────────────────────────────────────────
 let allMeals = [];    // current full result set
 let displayedCount = 0;     // how many cards shown
 let currentCategory = 'all';
 let searchQuery = '';
 let favorites = JSON.parse(localStorage.getItem('saveur_favs') || '{}');
 
-// ── DOM REFS ───────────────────────────────────────────────
 const homeView = document.getElementById('home-view');
 const detailView = document.getElementById('detail-view');
 const favView = document.getElementById('favorites-view');
@@ -29,7 +26,6 @@ const toast = document.getElementById('toast');
 const loader = document.getElementById('loader');
 const favBadge = document.getElementById('fav-count-badge');
 
-// ── INIT ───────────────────────────────────────────────────
 (async function init() {
     restoreTheme();
     updateFavBadge();
@@ -47,7 +43,6 @@ const favBadge = document.getElementById('fav-count-badge');
     });
 })();
 
-// ── THEME ──────────────────────────────────────────────────
 function restoreTheme() {
     const saved = localStorage.getItem('saveur_theme') || 'light';
     document.body.setAttribute('data-theme', saved);
@@ -62,11 +57,9 @@ function toggleTheme() {
     document.getElementById('theme-icon').textContent = next === 'dark' ? '☀️' : '🌙';
 }
 
-// ── LOADER ─────────────────────────────────────────────────
 function showLoader() { loader.classList.remove('hidden'); }
 function hideLoader() { loader.classList.add('hidden'); }
 
-// ── TOAST ──────────────────────────────────────────────────
 let toastTimer;
 function showToast(msg) {
     toast.textContent = msg;
@@ -79,14 +72,12 @@ function showToast(msg) {
     }, 2600);
 }
 
-// ── API HELPERS ────────────────────────────────────────────
 async function apiGet(path) {
     const res = await fetch(API + path);
     if (!res.ok) throw new Error('API error ' + res.status);
     return res.json();
 }
 
-// ── LOAD CATEGORIES ────────────────────────────────────────
 async function loadCategories() {
     try {
         const data = await apiGet('/categories.php');
@@ -103,7 +94,6 @@ async function loadCategories() {
     }
 }
 
-// ── LOAD FEATURED MEALS ─────────────────────────────────────
 async function loadFeaturedMeals() {
     showLoader();
     showSkeletons();
@@ -124,7 +114,6 @@ async function loadFeaturedMeals() {
     }
 }
 
-// ── FILTER BY CATEGORY ─────────────────────────────────────
 async function filterByCategory(cat) {
     currentCategory = cat;
     searchQuery = '';
@@ -155,7 +144,6 @@ async function filterByCategory(cat) {
     }
 }
 
-// ── SEARCH ─────────────────────────────────────────────────
 async function handleSearch() {
     const q = searchInput.value.trim();
     if (!q) { resetSearch(); return; }
@@ -189,7 +177,6 @@ function resetSearch() {
     loadFeaturedMeals();
 }
 
-// ── RENDER GRID ────────────────────────────────────────────
 function renderGrid(append = false) {
     if (!append) {
         recipeGrid.innerHTML = '';
@@ -224,7 +211,6 @@ function loadMore() {
     renderGrid(true);
 }
 
-// ── CREATE CARD ────────────────────────────────────────────
 function createCard(meal, animIndex = 0) {
     const isFav = !!favorites[meal.idMeal];
     const card = document.createElement('div');
@@ -269,7 +255,6 @@ function createCard(meal, animIndex = 0) {
     return card;
 }
 
-// ── DETAIL PAGE ────────────────────────────────────────────
 async function openDetail(mealId) {
     showLoader();
     try {
@@ -382,7 +367,6 @@ function parseSteps(raw) {
     return steps.slice(0, 30); // cap at 30
 }
 
-// ── FAVOURITES ─────────────────────────────────────────────
 function toggleFav(e, mealId, fromDetail = false) {
     e.stopPropagation();
 
@@ -458,7 +442,6 @@ function showFavorites() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── VIEW SWITCHING ─────────────────────────────────────────
 function showView(name) {
     homeView.classList.add('hidden');
     detailView.classList.add('hidden');
@@ -474,7 +457,6 @@ function showHome() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── SKELETONS ──────────────────────────────────────────────
 function showSkeletons() {
     recipeGrid.innerHTML = '';
     for (let i = 0; i < 8; i++) {
@@ -492,7 +474,6 @@ function showSkeletons() {
     noResults.classList.add('hidden');
 }
 
-// ── UTILS ──────────────────────────────────────────────────
 function escapeHtml(str) {
     if (!str) return '';
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

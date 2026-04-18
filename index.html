@@ -29,10 +29,8 @@
         </div>
     </nav>
 
-    <!-- ── HOME VIEW ───────────────────────────────────────────── -->
     <div id="home-view">
 
-        <!-- HERO -->
         <section class="hero">
             <div class="hero-bg-text">FOOD</div>
             <div class="hero-content">
@@ -42,7 +40,6 @@
                 </h1>
                 <p class="hero-sub">From weeknight staples to weekend feasts — every dish has a story. Find yours.</p>
 
-                <!-- SEARCH BAR -->
                 <div class="search-wrap">
                     <input type="text" id="searchInput" class="search-input" placeholder="Search any dish…"
                         autocomplete="off" />
@@ -58,7 +55,6 @@
             <div class="hero-deco"></div>
         </section>
 
-        <!-- CATEGORY FILTER -->
         <section class="categories-section" id="categoriesSection">
             <div class="container">
                 <div class="section-header">
@@ -71,7 +67,6 @@
             </div>
         </section>
 
-        <!-- RECIPE GRID -->
         <section class="recipes-section">
             <div class="container">
                 <div class="section-header" id="gridHeader">
@@ -79,7 +74,6 @@
                     <div class="title-line"></div>
                 </div>
                 <div class="recipe-grid" id="recipeGrid">
-                    <!-- Cards injected by JS -->
                 </div>
                 <div class="no-results hidden" id="noResults">
                     <div class="no-results-icon">🍽️</div>
@@ -93,9 +87,7 @@
             </div>
         </section>
 
-    </div><!-- /home-view -->
 
-    <!-- ── DETAIL VIEW ─────────────────────────────────────────── -->
     <div id="detail-view" class="hidden">
         <div class="container detail-container">
             <button class="back-btn" onclick="showHome()">
@@ -108,7 +100,6 @@
         </div>
     </div>
 
-    <!-- ── FAVORITES VIEW ──────────────────────────────────────── -->
     <div id="favorites-view" class="hidden">
         <div class="container">
             <div class="section-header" style="margin-top:2rem">
@@ -132,10 +123,8 @@
         </div>
     </div>
 
-    <!-- ── TOAST ──────────────────────────────────────────────── -->
     <div class="toast hidden" id="toast"></div>
 
-    <!-- ── LOADER ─────────────────────────────────────────────── -->
     <div class="loader-overlay hidden" id="loader">
         <div class="loader-spinner"></div>
     </div>
